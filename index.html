@@ -6,18 +6,33 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
   <title>John Gootee - Full Stack Developer</title>
   <meta content="" name="keywords">
+  <!-- <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/> -->
   <link href="assets/img/favicon.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
   <link href="https://fonts.googleapis.com/css2?family=Taviraj:wght@400;500;600;700&family=Work+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <!-- <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet"> -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
-  <link href="assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet">
-  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <!-- <link href="assets/vendor/aos/aos.css" rel="stylesheet"> -->
+  <!-- <link href="assets/vendor/line-awesome/css/line-awesome.min.css" rel="stylesheet"> -->
+  <!-- <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet"> -->
   <link href="assets/css/style.css" rel="stylesheet">
   <script src="https://kit.fontawesome.com/a7c0316672.js" crossorigin="anonymous"></script>
+  <script>
+    function filterWorkCards(filterType) {
+      const cardContainer = document.getElementById("work");
+      const cards = cardContainer.getElementsByClassName("card-filter");
+      for (card of cards) {
+        if (card.classList.contains(filterType) || filterType === "all") {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      }
+    }
+  </script>
 </head>
 
 <body>
@@ -66,10 +81,10 @@
               <ul class="menu">
                 <li class="active"><a href="#main"><h4>Home</h4></a></li>
                 <li><a href="#about"><h4>About</h4></a></li>
-                <li><a href="#services"><h4>Services</h4></a></li>
+                <!-- <li><a href="#services"><h4>Services</h4></a></li> -->
                 <li><a href="#work"><h4>Work</h4></a></li>            
                 <li><a href="#skills"><h4>Skills</h4></a></li>
-                <li><a href="#testimonials"><h4>Testimonials</h4></a></li>
+                <!-- <li><a href="#testimonials"><h4>Testimonials</h4></a></li> -->
                 <li><a href="#education"><h4>Education</h4></a></li> 
                 <li><a href="#experience"><h4>Experience</h4></a></li>
               </ul>
@@ -82,11 +97,637 @@
     <section id="about" class="section">
       <h2 class="section-heading">About</h2>
       <div class="about-text">
-        <p class="h4-contrast">A seasoned IT Professional with 15+ years of broad experience designing, developing, testing and documenting software systems. Led teams and managed projects with responsibility to internal and external stakeholders, contractors and resources at all levels.</p>
+        <p class="h4-contrast">A seasoned IT Professional with 15+ years of broad experience designing, developing, testing and documenting software systems. Leads teams and manages projects with responsibility to internal and external stakeholders, contractors and resources at all levels.</p>
       </div>
     </section>
 
+    <section id="work" class="section site-portfolio">
+      <h2 class="section-heading">Work</h2>
+      <div class="container">
+        <!-- filter -->         
+        <div class="row mb-5 align-items-center">      
+          <div class="col-12 d-flex justify-content-lg-center">
+            <div id="filters" class="filters d-flex">
+              <div onclick="filterWorkCards('all')">
+                <a href="#work"><p class="px-2 work-filter-option">All</p></a>
+              </div>
+              <div onclick="filterWorkCards('javascript')">
+                <a href="#work"><p class="px-2 work-filter-option">JavaScript</p></a>
+              </div>
+              <div onclick="filterWorkCards('php')">
+                <a href="#work"><p class="px-2 work-filter-option">PHP</p></a>
+              </div>
+              <div onclick="filterWorkCards('react')">
+                <a href="#work"><p class="px-2 work-filter-option">React</p></a>
+              </div>
+            </div>            
+          </div>
+        </div>
+        <div class="row">
+          <!-- sudoku -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript card-filter">
+            <div class="card">
+              <div class="card-visible collapse show sudoku-collapse " aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".sudoku-collapse">
+                  <img alt="sudoku" class="card-title-header-img" src="/assets/img/sudoku.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".sudoku-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Sudoku Solver
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>A simple game interface with play and puzzle solving logic</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse sudoku-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".sudoku-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: ejs</li>
+                      <li>Back end: NodeJS, ExpressJS and KnexJS</li>
+                      <li>Game logic: JavaScript</li>
+                    </ul>                  
+                  </div>
+                  <div class="card-action d-flex">
+                    <!-- <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </div>
+                    </div> -->
+                    <div class="github card-action-link " data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <a href="https://github.com/gootee/games" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- fulton -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 php react card-filter">
+            <div class="card">
+              <div class="card-visible collapse show fulton-collapse" aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".fulton-collapse">
+                  <img alt="fulton" class="card-title-header-img" src="/assets/img/fulton.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".fulton-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      <p>Court Mediation Scheduling</p>
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>Admin, tracking and scheduling for a County Superior Court office in the U.S.</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse fulton-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".fulton-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="h5-contrast py-3">
+                      <li>Back end: PHP/Laravel, MySQL</li>
+                      <li>Front end: React</li>
+                      <li>Secure role-based authentication</li>
+                    </ul>    
+                    <div class="">
+                      <p class="text-center card-reveal-list-heading">My Roles</p>
+                      <ul class="h5-contrast py-3">
+                        <li>Back end developer</li>
+                        <li>Project subject-matter expert</li>
+                        <li>Client demo presentations</li>
+                      </ul>                       
+                    </div>
+                  </div>
+
+                  <div class="card-action d-flex">
+                    <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <a href="https://adrmediationfrontend.fultoncourt.org/" target="_blank">
+                          <i class="fas fa-external-link-alt"></i>
+                        </a>
+                      </div>
+                    </div>
+                    <div class="github card-action-link">
+                      <div class="card-action-link-icon card-reveal-icon">
+                        <!-- <a href="https://adrmediationfrontend.fultoncourt.org/" target="_blank"> -->
+                          <i class="fab fa-github"></i>
+                        <!-- </a> -->
+                        
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+          <!-- minesweeper -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript card-filter">
+            <div class="card">
+              <div class="card-visible collapse show minesweeper-collapse" aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".minesweeper-collapse">
+                  <img alt="minesweeper" class="card-title-header-img" src="/assets/img/minesweeper.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".minesweeper-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Minesweeper
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>The old Windows game for browser</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse minesweeper-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".minesweeper-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: ejs</li>
+                      <li>Back end: NodeJS, ExpressJS and KnexJS</li>
+                      <li>Game logic: JavaScript</li>
+                    </ul>                   
+                  </div>
+
+                  <div class="card-action d-flex">
+                    <!-- <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </div>
+                    </div> -->
+                    <div class="github card-action-link">
+                      <div class="card-action-link-icon" data-toggle="tooltip" title="Games repo on Github">
+                        <a href="https://github.com/gootee/games" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- hangman -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript card-filter">
+            <div class="card">
+              <div class="card-visible collapse show hangman-collapse" aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".hangman-collapse">
+                  <img alt="hangman" class="card-title-header-img" src="/assets/img/hangman.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".hangman-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Hangman
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>A classic game - choose letters carefully!</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse hangman-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".hangman-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: ejs</li>
+                      <li>Back end: NodeJS, ExpressJS and KnexJS</li>
+                      <li>Game logic: JavaScript</li>
+                    </ul>                    
+                  </div>
+
+                  <div class="card-action d-flex">
+                    <!-- <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </div>
+                    </div> -->
+                    <div class="github card-action-link">
+                      <div class="card-action-link-icon" data-toggle="tooltip" title="Games repo on Github">
+                        <a href="https://github.com/gootee/games" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="section">
+      <h2 class="section-heading">Skills</h2>
+      <div class="container justify-content-center">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <p class="h4-contrast card-heading-description">HTML</p>
+            </div>
+            <div class="row d-flex align-items-end">
+              <div class="col-sm-12 col-md-2 d-flex flex-column align-items-center justify-content-between py-2">
+                <img alt="HTML5 logo" src="./assets/img/html5.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">HTML5</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="JSX logo" src="./assets/img/react.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">JSX</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <p class="h4-contrast card-heading-description">CSS</p>
+            </div>
+            <div class="row d-flex">
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="HTML5 logo" src="./assets/img/css3.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">CSS3</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="JSX logo" src="./assets/img/bootstrap.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">Bootstrap</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <p class="h4-contrast card-heading-description">JavaScript</p>
+            </div>
+            <div class="row d-flex">
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="React logo" src="./assets/img/react.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">React</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="jQuery logo" src="./assets/img/javascript.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">JavaScript</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="jQuery logo" src="./assets/img/jquery.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">jQuery</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="JSX logo" src="./assets/img/nodejs.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">Node</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title">
+              <p class="h4-contrast card-heading-description">Back-End</p>
+            </div>
+            <div class="row d-flex">
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="Express logo" src="./assets/img/express.png" class="card-title-img"/>               
+                <div class="card-logo-description">
+                  <p class="h5-contrast">ExpressJS</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="Rails logo" src="./assets/img/rails.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">Ruby on Rails</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="PHP logo" src="./assets/img/php.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">PHP</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="jQuery logo" src="./assets/img/laravel.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">Laravel</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="jQuery logo" src="./assets/img/knex.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">Knex</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="MySQL logo" src="./assets/img/mysql.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">MySQL</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="PostgreSQL logo" src="./assets/img/postgresql.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">PostgreSQL</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="education" class="section">
+      <h2 class="section-heading">Education</h2>
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-12 col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">
+                  <a href="https://www.indiana.edu/" target="_blank">
+                    <img class="card-title-img" src="/assets/img/iu_tab_web.png">
+                    <span class="card-title-text h4-contrast">Indiana University</span>                  
+                  </a>
+                </div>
+                <div class="card-text">
+                  <p>Bachelor of Science<br>Business Operations Systems</p>
+                </div>
+              </div>              
+            </div>
+          </div>
+          <div class="col-sm-12 col-md-6">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-title">
+                  <a href="https://www.codecore.ca/" target="_blank">
+                    <img class="card-title-img" src="/assets/img/codecore.png">
+                    <span class="card-title-text h4-contrast">CodeCore College</span>                  
+                  </a>
+                </div>
+                <div class="card-text">
+                  <p>Graduate Certificate<br>Full Stack Web Developer</p>
+                </div>
+              </div>              
+              <!-- <div class="card-body">
+                <p>
+                  <div class="card-title">
+                    <a href="https://www.codecore.ca/" target="_blank"><span class="h4-contrast">CodeCore College</span></a>
+                  </div>
+                </p>
+                <div class="card-text">
+                  <p>Certificate<br>Full-stack Web Development</p>
+                </div>          
+              </div> -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- <div>
+        <a href="https://www.indiana.edu/"><h4>Indiana University</h4></a>
+        <p>Bachelor of Science - Business Operations Systems</p>
+      </div>
+      <div>
+        <a href="https://www.codecore.ca/"><h4>CodeCore College</h4></a>
+        <p>Certificate - Full-stack Web Development</p>
+      </div> -->
+    </section>
+
+    <section id="experience" class="section experience-section">
+      <h2 class="section-heading">Experience</h2>
+      <div class="container justify-content-center">
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title row d-flex align-items-center experience-company">
+              <div class="col-sm-12 col-md-2">
+                <img alt="Condoit logo" src="./assets/img/condoit.jpg" class="card-title-img card-logo pr-3 center-block"/>
+              </div>
+              <span class="card-title col-sm-12 col-md-10 h4-contrast">Condoit</span>
+            </div>
+            <div class="card-heading py-2">
+              <span class="job-title">Junior Full-Stack Developer</span>
+            </div>
+            <div class="card-text">
+              <p>Condoit is a development-stage app for the real estate management market.</p>
+              <ul>
+                <li>Development (Linux, Node, TypeScript, Express, React, PostgreSQL)</li>
+                <li>Functional Design</li>
+              </ul>              
+            </div>
+            <div class="card-action py-3">
+              <p>July 2018 to present | New Westminster, BC</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title row d-flex align-items-center experience-company">
+              <div class="col-sm-12 col-md-2">
+                <img alt="Paramount Software Solutions logo" src="./assets/img/paramount.png" class="card-title-img card-logo pr-3 center-block"/>
+              </div>
+              <span class="card-title col-sm-12 col-md-10 h4-contrast">Paramount Software Solutions</span>
+            </div>
+            <div class="card-heading py-2">
+              <span class="job-title">Junior Full-Stack Developer</span>
+            </div>
+            <div class="card-text">
+              <p>Jr. Full-stack Developer/Business Analyst/SME on an Agile team creating a
+                REST API and responsive front end (PHP/MySQL/React/Twilio)</p>             
+            </div>
+            <div class="card-action py-3">
+              <p>Jan. 2020 to April 2020</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title row d-flex align-items-center experience-company">
+              <div class="col-sm-12 col-md-2">
+                <img alt="Quay Pacific Property Management logo" src="./assets/img/qppm.png" class="card-title-img card-logo pr-3 center-block"/>
+              </div>
+              <span class="card-title col-sm-12 col-md-10 h4-contrast">Quay Pacific Property Management</span>
+            </div>
+            <div class="card-heading py-2">
+              <span class="job-title">IT Specialist</span>
+            </div>
+            <div class="card-text">
+              <p>Condoit is a development-stage app for the real estate management market.</p>
+              <ul>
+                <li>Developed and integrated custom CRM, workflow, accounting, and data archiving software systems</li>
+                <li>Designed/developed a new company website with secure client portal</li>
+                <li>Provided end-user hardware/software/network installation, support and training for 45 employees in multiple offices</li>
+                <li>Managed tech assets during the opening of new offices</li>
+                <li>Negotiated and administered client and third-party contracts</li>
+                <li>Member of executive team charged with process improvement, planning, and policy review</li>
+              </ul>              
+            </div>
+            <div class="card-action py-3">
+              <p>Sept. 2012 to July 2018 | New Westminster, BC</p>
+            </div>
+          </div>
+        </div>
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title row d-flex align-items-center experience-company">
+              <div class="col-sm-12 col-md-2">
+                <img alt="Golden Gate Group logo" src="./assets/img/GGG.png" class="card-title-img card-logo pr-3 center-block"/>
+              </div>
+              <span class="card-title col-sm-12 col-md-10 h4-contrast">Golden Gate Group</span>
+            </div>
+            <div class="card-heading py-2">
+              <span class="job-title">Lead Developer - Noteminer</span>
+            </div>
+            <div class="card-text">
+              <p>Led NoteMiner design and development (Javascript, Powerbuilder 11, APIs, ETL, ODBC, SQL, MySQL, CSS, HTML and XML)</p>            
+            </div>
+            <div class="card-action py-3">
+              <p>May 2007 to July 2012 | Decatur, GA</p>
+            </div>
+          </div>
+        </div>  
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title row d-flex align-items-center experience-company">
+              <div class="col-sm-12 col-md-2">
+                <img alt="Primerica Financial Services logo" src="./assets/img/primerica.jpeg" class="card-title-img card-logo pr-3 center-block"/>
+              </div>
+              <span class="card-title col-sm-12 col-md-10 h4-contrast">Primerica Financial Services</span>
+            </div>
+            <div class="card-heading py-2">
+              <span class="job-title">Standard Engineer II</span>
+            </div>
+            <div class="card-text">
+              <p>- Developer/Team Leader/Release Manager on an award-winning financial
+                services sales tools and accounting applications (HTML, CSS,
+                Powerbuilder 10, Sybase SQL Anywhere, MS SQL Server).</p>              
+            </div>
+            <div class="card-action py-3">
+              <p>Aug 2002 – May 2007 | Duluth, GA</p>
+            </div>
+          </div>
+        </div> 
+        <div class="card">
+          <div class="card-body">
+            <div class="card-title row d-flex align-items-center experience-company">
+              <div class="col-sm-12 col-md-2">
+                <img alt="Consultant logo" src="./assets/img/consultant.png" class="card-title-img card-logo pr-3 center-block"/>
+              </div>
+              <span class="card-title col-sm-12 col-md-10 h4-contrast">Various clients</span>
+            </div>
+            <div class="card-heading py-2">
+              <span class="job-title">Senior Consultant / Development Manager</span>
+            </div>
+            <div class="card-text">
+              <p>- Designed and developed custom desktop applications to client
+                specifications in the medical, financial services, banking,
+                telecommunications, manufacturing, and electrical utility industries
+                - Designed and managed relational databases
+                - Led development teams</p>              
+            </div>
+            <div class="card-action py-3">
+              <p>Prior to August 2002 | Atlanta, GA</p>
+            </div>
+          </div>
+        </div>             
+      </div>
+    </section>
+    
+    <!-- <section id="testimonials" class="section pt-0">
+      <h3 class="section-heading">Testimonials</h3>
+      <div class="container">
+        <div class="owl-carousel testimonial-carousel">
+          <div class="testimonial-wrap">
+            <div class="testimonial">
+              <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
+                  explicabo inventore.</p>
+              </blockquote>
+              <p>&mdash; Jean Hicks</p>
+            </div>
+          </div>
+
+          <div class="testimonial-wrap">
+            <div class="testimonial">
+              <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid">
+              <blockquote>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
+                  explicabo inventore.</p>
+              </blockquote>
+              <p>&mdash; Chris Stanworth</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>     -->
+
     <!-- <section id="services" class="section">
+  </main>
       <h2 class="section-heading">Services</h2>
       <div class="container">
         <div class="row justify-content-center text-center mb-4">
@@ -148,426 +789,6 @@
       </div>
     </section> -->
 
-    <!-- <section id="work" class="section site-portfolio">
-      <h2 class="section-heading">Work</h2>
-      <div class="container">
-        <div class="row mb-5 align-items-center">
-          <div class="col-md-12 col-lg-6 mb-4 mb-lg-0" data-aos="fade-up">
-            <h2>Hi, I'm John Gootee</h2>
-            <p class="mb-0">Full Stack Developer</p>
-          </div>
-          <div class="col-md-12 col-lg-6 text-left text-lg-right" data-aos="fade-up" data-aos-delay="100">
-            <div id="filters" class="filters">
-              <a href="#" data-filter="*" class="active">All</a>
-              <a href="#" data-filter=".web">Web</a>
-              <a href="#" data-filter=".design">Design</a>
-              <a href="#" data-filter=".branding">Branding</a>
-              <a href="#" data-filter=".photography">Photography</a>
-            </div>
-          </div>
-        </div>
-        <div id="portfolio-grid" class="row no-gutter" data-aos="fade-up" data-aos-delay="200">
-          <div class="item web col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>Boxed Water</h3>
-                <span>Web</span>
-              </div>
-              <img class="img-fluid" src="assets/img/img_1.jpg">
-            </a>
-          </div>
-          <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>Build Indoo</h3>
-                <span>Photography</span>
-              </div>
-              <img class="img-fluid" src="assets/img/img_2.jpg">
-            </a>
-          </div>
-          <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>Cocooil</h3>
-                <span>Branding</span>
-              </div>
-              <img class="img-fluid" src="assets/img/img_3.jpg">
-            </a>
-          </div>
-          <div class="item design col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>Nike Shoe</h3>
-                <span>Design</span>
-              </div>
-              <img class="img-fluid" src="assets/img/img_4.jpg">
-            </a>
-          </div>
-          <div class="item photography col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>Kitchen Sink</h3>
-                <span>Photography</span>
-              </div>
-              <img class="img-fluid" src="assets/img/img_5.jpg">
-            </a>
-          </div>
-          <div class="item branding col-sm-6 col-md-4 col-lg-4 mb-4">
-            <a href="work-single.html" class="item-wrap fancybox">
-              <div class="work-info">
-                <h3>Amazon</h3>
-                <span>brandingn</span>
-              </div>
-              <img class="img-fluid" src="assets/img/img_6.jpg">
-            </a>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-    <section id="skills" class="section">
-      <h2 class="section-heading">Skills</h2>
-      <div class="container justify-content-center">
-        <div class="card">
-          <div class="card-content">
-            <div class="card-heading">
-              <p class="h4-contrast card-heading-description">HTML</p>
-            </div>
-            <div class="row d-flex align-items-end">
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="HTML5 logo" src="./assets/img/html5.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">HTML5</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="JSX logo" src="./assets/img/react.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">JSX</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="card-heading">
-              <p class="h4-contrast card-heading-description">CSS</p>
-            </div>
-            <div class="row d-flex">
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="HTML5 logo" src="./assets/img/css3.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">CSS3</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="JSX logo" src="./assets/img/bootstrap.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">Bootstrap</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="card-heading">
-              <p class="h4-contrast card-heading-description">JavaScript</p>
-            </div>
-            <div class="row d-flex">
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="React logo" src="./assets/img/react.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">React</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="jQuery logo" src="./assets/img/javascript.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">JavaScript</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="jQuery logo" src="./assets/img/jquery.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">jQuery</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="JSX logo" src="./assets/img/nodejs.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">Node</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="card-heading">
-              <p class="h4-contrast card-heading-description">Back-End</p>
-            </div>
-            <div class="row d-flex">
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between">
-                <div>
-                  <img alt="Express logo" src="./assets/img/express.png" class="card-logo"/>
-                </div>
-                
-                <div class="card-logo-description">
-                  <p class="h5-contrast">ExpressJS</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="Rails logo" src="./assets/img/rails.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">Ruby on Rails</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="PHP logo" src="./assets/img/php.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">PHP</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="jQuery logo" src="./assets/img/laravel.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">Laravel</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="MySQL logo" src="./assets/img/mysql.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">MySQL</p>
-                </div>
-              </div>
-              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
-                <img alt="PostgreSQL logo" src="./assets/img/postgresql.png" class="card-logo"/>
-                <div class="card-logo-description">
-                  <p class="h5-contrast">PostgreSQL</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- <section id="testimonials" class="section pt-0">
-      <h3 class="section-heading">Testimonials</h3>
-      <div class="container">
-        <div class="owl-carousel testimonial-carousel">
-          <div class="testimonial-wrap">
-            <div class="testimonial">
-              <img src="assets/img/person_1.jpg" alt="Image" class="img-fluid">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
-                  explicabo inventore.</p>
-              </blockquote>
-              <p>&mdash; Jean Hicks</p>
-            </div>
-          </div>
-
-          <div class="testimonial-wrap">
-            <div class="testimonial">
-              <img src="assets/img/person_2.jpg" alt="Image" class="img-fluid">
-              <blockquote>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam necessitatibus incidunt ut officiis
-                  explicabo inventore.</p>
-              </blockquote>
-              <p>&mdash; Chris Stanworth</p>
-            </div>
-          </div>
-
-        </div>
-
-      </div>
-    </section>     -->
-    
-    <section id="education" class="section">
-      <h2 class="section-heading">Education</h2>
-      <div class="container">
-        <div class="row">
-          <div class="col-sm-12 col-md-6">
-            <div class="card">
-              <div class="card-content">
-                <!-- <p> -->
-                  <div class="card-title">
-                    <a href="https://www.indiana.edu/" target="_blank"><span class="h4-contrast">Indiana University</span></a>
-                  </div>
-                <div class="card-message">
-                  <p>Bachelor of Science<br>Business Operations Systems</p>
-                </div>
-              </div>              
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-6">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <div class="card-title">
-                    <a href="https://www.codecore.ca/" target="_blank"><span class="h4-contrast">CodeCore College</span></a>
-                  </div>
-                </p>
-                <div class="card-message">
-                  <p>Certificate<br>Full-stack Web Development</p>
-                </div>          
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- <div>
-        <a href="https://www.indiana.edu/"><h4>Indiana University</h4></a>
-        <p>Bachelor of Science - Business Operations Systems</p>
-      </div>
-      <div>
-        <a href="https://www.codecore.ca/"><h4>CodeCore College</h4></a>
-        <p>Certificate - Full-stack Web Development</p>
-      </div> -->
-    </section>
-
-    <section id="experience" class="section experience-section">
-      <h2 class="section-heading">Experience</h2>
-      <div class="container justify-content-center">
-        <div class="card">
-          <div class="card-content">
-            <div class="row d-flex align-items-center experience-company">
-              <div class="col-sm-12 col-md-2">
-                <img alt="Condoit logo" src="./assets/img/condoit.jpg" class="card-logo pr-3 center-block"/>
-              </div>
-              <span class="card-title col-sm-12 col-md-10 h4-contrast">Condoit</span>
-            </div>
-            <div class="card-heading py-2">
-              <span class="job-title">Junior Full-Stack Developer</span>
-            </div>
-            <div class="card-message">
-              <p>Condoit is a development-stage app for the real estate management market.</p>
-              <ul>
-                <li>Development (Linux, Node, TypeScript, Express, React, PostgreSQL)</li>
-                <li>Functional Design</li>
-              </ul>              
-            </div>
-            <div class="card-action py-3">
-              <p>July 2018 to present | New Westminster, BC</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="row d-flex align-items-center experience-company">
-              <div class="col-sm-12 col-md-2">
-                <img alt="Paramount Software Solutions logo" src="./assets/img/paramount.png" class="card-logo pr-3 center-block"/>
-              </div>
-              <span class="card-title col-sm-12 col-md-10 h4-contrast">Paramount Software Solutions</span>
-            </div>
-            <div class="card-heading py-2">
-              <span class="job-title">Junior Full-Stack Developer</span>
-            </div>
-            <div class="card-message">
-              <p>Jr. Full-stack Developer/Business Analyst/SME on an Agile team creating a
-                REST API and responsive front end (PHP/MySQL/React/Twilio)</p>             
-            </div>
-            <div class="card-action py-3">
-              <p>Jan. 2020 to April 2020</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="row d-flex align-items-center experience-company">
-              <div class="col-sm-12 col-md-2">
-                <img alt="Quay Pacific Property Management logo" src="./assets/img/qppm.png" class="card-logo pr-3 center-block"/>
-              </div>
-              <span class="card-title col-sm-12 col-md-10 h4-contrast">Quay Pacific Property Management</span>
-            </div>
-            <div class="card-heading py-2">
-              <span class="job-title">IT Specialist</span>
-            </div>
-            <div class="card-message">
-              <p>Condoit is a development-stage app for the real estate management market.</p>
-              <ul>
-                <li>Developed and integrated custom CRM, workflow, accounting, and data archiving software systems</li>
-                <li>Designed/developed a new company website with secure client portal</li>
-                <li>Provided end-user hardware/software/network installation, support and training for 45 employees in multiple offices</li>
-                <li>Managed tech assets during the opening of new offices</li>
-                <li>Negotiated and administered client and third-party contracts</li>
-                <li>Member of executive team charged with process improvement, planning, and policy review</li>
-              </ul>              
-            </div>
-            <div class="card-action py-3">
-              <p>Sept. 2012 to July 2018 | New Westminster, BC</p>
-            </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-content">
-            <div class="row d-flex align-items-center experience-company">
-              <div class="col-sm-12 col-md-2">
-                <img alt="Golden Gate Group logo" src="./assets/img/GGG.png" class="card-logo pr-3 center-block"/>
-              </div>
-              <span class="card-title col-sm-12 col-md-10 h4-contrast">Golden Gate Group</span>
-            </div>
-            <div class="card-heading py-2">
-              <span class="job-title">Lead Developer - Noteminer</span>
-            </div>
-            <div class="card-message">
-              <p>Led NoteMiner design and development (Javascript, Powerbuilder 11, APIs, ETL, ODBC, SQL, MySQL, CSS, HTML and XML)</p>            
-            </div>
-            <div class="card-action py-3">
-              <p>May 2007 to July 2012 | Decatur, GA</p>
-            </div>
-          </div>
-        </div>  
-        <div class="card">
-          <div class="card-content">
-            <div class="row d-flex align-items-center experience-company">
-              <div class="col-sm-12 col-md-2">
-                <img alt="Primerica Financial Services logo" src="./assets/img/primerica.jpeg" class="card-logo pr-3 center-block"/>
-              </div>
-              <span class="card-title col-sm-12 col-md-10 h4-contrast">Primerica Financial Services</span>
-            </div>
-            <div class="card-heading py-2">
-              <span class="job-title">Standard Engineer II</span>
-            </div>
-            <div class="card-message">
-              <p>- Developer/Team Leader/Release Manager on an award-winning financial
-                services sales tools and accounting applications (HTML, CSS,
-                Powerbuilder 10, Sybase SQL Anywhere, MS SQL Server).</p>              
-            </div>
-            <div class="card-action py-3">
-              <p>Aug 2002 – May 2007 | Duluth, GA</p>
-            </div>
-          </div>
-        </div> 
-        <div class="card">
-          <div class="card-content">
-            <div class="row d-flex align-items-center experience-company">
-              <div class="col-sm-12 col-md-2">
-                <img alt="Consultant logo" src="./assets/img/consultant.png" class="card-logo pr-3 center-block"/>
-              </div>
-              <span class="card-title col-sm-12 col-md-10 h4-contrast">Various clients</span>
-            </div>
-            <div class="card-heading py-2">
-              <span class="job-title">Senior Consultant / Development Manager</span>
-            </div>
-            <div class="card-message">
-              <p>- Designed and developed custom desktop applications to client
-                specifications in the medical, financial services, banking,
-                telecommunications, manufacturing, and electrical utility industries
-                - Designed and managed relational databases
-                - Led development teams</p>              
-            </div>
-            <div class="card-action py-3">
-              <p>Prior to August 2002 | Atlanta, GA</p>
-            </div>
-          </div>
-        </div>             
-      </div>
-    </section>
-  </main>
-
 
   <!-- ======= Footer ======= -->
   <footer class="footer" role="contentinfo">
@@ -599,7 +820,7 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+  <!-- <script type="text/javascript" src="assets/js/materialize.min.js"></script> -->
 </body>
 
 </html>
