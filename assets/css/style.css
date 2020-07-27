@@ -200,6 +200,10 @@ p {
   padding: 0 20px;
 }
 
+#about .paragraph {
+  margin: 10px 0;
+}
+
 #work .card {
   margin: 20px auto;
   height: 400px;
