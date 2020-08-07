@@ -129,6 +129,9 @@
               <div onclick="filterWorkCards('php')">
                 <a href="#work"><p class="px-2 work-filter-option">PHP</p></a>
               </div>
+              <div onclick="filterWorkCards('node')">
+                <a href="#work"><p class="px-2 work-filter-option">NodeJS</p></a>
+              </div>
               <div onclick="filterWorkCards('react')">
                 <a href="#work"><p class="px-2 work-filter-option">React</p></a>
               </div>
@@ -315,6 +318,56 @@
               </div>
             </div>
           </div>
+          <!-- student list -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript react card-filter">
+            <div class="card">
+              <div class="card-visible collapse show student-collapse" aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".student-collapse">
+                  <img alt="student list" class="card-title-header-img" src="/assets/img/student-list.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".student-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Student List
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>A small React component sample from a front-end coding assessment.</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse student-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".student-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: React</li>
+                    </ul>                    
+                  </div>
+
+                  <div class="card-action d-flex">
+                    <div class="github card-action-link">
+                      <div class="card-action-link-icon" data-toggle="tooltip" title="Student List repo on Github">
+                        <a href="https://github.com/gootee/Student-List-frontend" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+
+              </div>
+            </div>
+          </div>          
           <!-- hangman -->
           <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript card-filter">
             <div class="card">
@@ -370,6 +423,63 @@
                   </div>                  
                 </div>
 
+              </div>
+            </div>
+          </div>
+          <!-- cluckr -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript node card-filter">
+            <div class="card">
+              <div class="card-visible collapse show cluckr-collapse" aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".cluckr-collapse">
+                  <img alt="cluckr" class="card-title-header-img" src="/assets/img/cluckr.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".cluckr-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Cluckr
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>A simple microblogging site with lots of chicken content.  Tastes like Twitter!</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse cluckr-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".cluckr-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: ejs</li>
+                      <li>Back end: NodeJS, ExpressJS, PostgreSQL and KnexJS</li>
+                      <li>Game logic: JavaScript</li>
+                    </ul>                    
+                  </div>
+
+                  <div class="card-action d-flex">
+                    <!-- <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </div>
+                    </div> -->
+                    <div class="github card-action-link">
+                      <div class="card-action-link-icon" data-toggle="tooltip" title="Games repo on Github">
+                        <a href="https://github.com/gootee/Cluckr" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
               </div>
             </div>
           </div>
