@@ -74,7 +74,7 @@
       </div>
     </nav>
 
-    <div class="collapse navbar-collapse heading-and-navmenu custom-navmenu  custom-navbar" id="main-navbar">
+    <div class="collapse navbar-collapse heading-and-navmenu custom-navmenu custom-navbar" id="main-navbar">
         <div class="container py-2 py-md-5  custom-navbar">
           <div class="row align-items-start">
             <div class="col-md-8">
@@ -93,7 +93,7 @@
             </div>
           </div>
         </div>
-      </div>
+    </div>
     <section id="about" class="section">
       <h2 class="section-heading">About</h2>
       <div class="about-text">
@@ -132,6 +132,9 @@
               <div onclick="filterWorkCards('node')">
                 <a href="#work"><p class="px-2 work-filter-option">NodeJS</p></a>
               </div>
+              <div onclick="filterWorkCards('rails')">
+                <a href="#work"><p class="px-2 work-filter-option">Ruby/Rails</p></a>
+              </div>
               <div onclick="filterWorkCards('react')">
                 <a href="#work"><p class="px-2 work-filter-option">React</p></a>
               </div>
@@ -139,6 +142,61 @@
           </div>
         </div>
         <div class="row">
+          <!-- biddr -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript react rails card-filter">
+            <div class="card">
+              <div class="card-visible collapse show biddr-collapse " aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".biddr-collapse">
+                  <img alt="biddr" class="card-title-header-img" src="/assets/img/biddr.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".biddr-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Biddr
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>A simple auction site</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse biddr-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".biddr-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: React Router</li>
+                      <li>Back end: Ruby/Rails API</li>
+                    </ul>                  
+                  </div>
+                  <div class="card-action d-flex">
+                    <!-- <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </div>
+                    </div> -->
+                    <div class="github card-action-link " data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <a href="https://github.com/gootee/Biddr" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>
           <!-- sudoku -->
           <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript card-filter">
             <div class="card">
