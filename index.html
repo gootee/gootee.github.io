@@ -138,6 +138,9 @@
               <div onclick="filterWorkCards('react')">
                 <a href="#work"><p class="px-2 work-filter-option">React</p></a>
               </div>
+              <div onclick="filterWorkCards('sass')">
+                <a href="#work"><p class="px-2 work-filter-option">Sass</p></a>
+              </div>
             </div>            
           </div>
         </div>
@@ -425,7 +428,58 @@
 
               </div>
             </div>
-          </div>          
+          </div> 
+          <!-- idea factory -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 rails sass card-filter">
+            <div class="card">
+              <div class="card-visible collapse show idea-collapse" aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".idea-collapse">
+                  <img alt="student list" class="card-title-header-img" src="/assets/img/idea.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".idea-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Idea Factory
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>An app that records and accepts comments on ideas</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse idea-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".idea-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: Sass</li>
+                    </ul>                    
+                  </div>
+
+                  <div class="card-action d-flex">
+                    <div class="github card-action-link">
+                      <div class="card-action-link-icon" data-toggle="tooltip" title="Idea Factory repo on Github">
+                        <a href="https://github.com/gootee/idea_factory" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+
+              </div>
+            </div>
+          </div> 
+               
           <!-- hangman -->
           <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript card-filter">
             <div class="card">
@@ -579,6 +633,12 @@
                 <img alt="HTML5 logo" src="./assets/img/css3.png" class="card-title-img"/>
                 <div class="card-logo-description">
                   <p class="h5-contrast">CSS3</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="SASS logo" src="./assets/img/sass.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">Sass</p>
                 </div>
               </div>
               <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
