@@ -119,6 +119,9 @@
               <div onclick="filterWorkCards('javascript')">
                 <a href="#work"><p class="px-2 work-filter-option">JavaScript</p></a>
               </div>
+              <div onclick="filterWorkCards('typescript')">
+                <a href="#work"><p class="px-2 work-filter-option">TypeScript</p></a>
+              </div>              
               <div onclick="filterWorkCards('php')">
                 <a href="#work"><p class="px-2 work-filter-option">PHP</p></a>
               </div>
@@ -138,6 +141,61 @@
           </div>
         </div>
         <div class="row">
+          <!-- Loonie Exchange Monitor -->
+          <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript react typescript sass node card-filter">
+            <div class="card">
+              <div class="card-visible collapse show loonieMon-collapse " aria-expanded="true">
+                <div class="card-title-header"  data-toggle="collapse" data-target=".loonieMon-collapse">
+                  <img alt="loonieMon" class="card-title-header-img" src="/assets/img/loonieMon.png">
+                </div>
+                <div class="card-title-bottom">
+                  <div class="d-flex justify-content-between align-items-center card-content" data-toggle="collapse" data-target=".loonieMon-collapse" aria-controls="card-visible card-reveal">
+                    <div class="work-product-title">
+                      Loonie Exchange Monitor
+                    </div> 
+                    <div class="card-reveal-icon">
+                      <i class="fas fa-ellipsis-v"></i>
+                    </div>
+                  </div> 
+                  <div class="card-description h5-contrast">
+                    <p>App analyzes historical $CAD/$USD exchange rates and recommends a buy/sell decision  - powered by the Frankfurter API.</p>
+                  </div>               
+                </div>
+              </div>
+              <div class="card-reveal collapse loonieMon-collapse" aria-expanded="false">
+                <div class="card-reveal-liner d-flex flex-column justify-content-between">
+                  <div class="card-heading">
+                    <div class="card-reveal-heading d-flex justify-content-between align-items-center py-3 px-2">
+                      <div class="h5">
+                        <!-- <p>Accomplishments</p> -->
+                      </div>                    
+                      <div class="card-reveal-close-icon" data-toggle="collapse" data-target=".loonieMon-collapse"  aria-controls="card-visible card-reveal">
+                        <i class="fas fa-times fa-2x"></i>
+                      </div>
+                    </div>
+                    <ul class="accomplishment-list h5-contrast py-3">
+                      <li>Front end: React / Sass / Typescript</li>
+                      <li>Back end: NodeJS/Express API / Typescript / Frankfurter API</li>
+                    </ul>                  
+                  </div>
+                  <div class="card-action d-flex">
+                    <!-- <div class="external-link card-action-link" data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <i class="fas fa-external-link-alt"></i>
+                      </div>
+                    </div> -->
+                    <div class="github card-action-link " data-toggle="tooltip" title="Hooray!">
+                      <div class="card-action-link-icon">
+                        <a href="https://github.com/gootee/loonie-exchange-monitor" target="_blank">
+                          <i class="fab fa-github"></i>
+                        </a>
+                      </div>  
+                    </div>
+                  </div>                  
+                </div>
+              </div>
+            </div>
+          </div>    
           <!-- icky -->
           <div class="col-sm-6 col-md-4 col-lg-4 mb-4 javascript react sass node card-filter">
             <div class="card">
@@ -777,6 +835,18 @@
                 <img alt="PostgreSQL logo" src="./assets/img/postgresql.png" class="card-title-img"/>
                 <div class="card-logo-description">
                   <p class="h5-contrast">PostgreSQL</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="MongoDB logo" src="./assets/img/mongodb.png" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">MongoDB</p>
+                </div>
+              </div>
+              <div class="col-sm-12 col-md-2 d-flex flex-column justify-content-between py-2">
+                <img alt="Mongoose logo" src="./assets/img/mongoose.jpg" class="card-title-img"/>
+                <div class="card-logo-description">
+                  <p class="h5-contrast">MongooseJS</p>
                 </div>
               </div>
             </div>
